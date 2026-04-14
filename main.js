@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    x = Math.random() * 3;
+    let x = Math.random() * 3;
     if (x < 1) {
         return "rock";
     }
@@ -49,3 +49,18 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
+function playGame() {
+    for (let x = 0; x < 5; x++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+    if (computerScore > humanScore) {
+        console.log("The computer won the game");
+    }
+    else if (humanScore > computerScore) {
+        console.log("You won the game");
+    }
+    else {
+        console.log("Both you and the computer got the same score");
+    }
+}
+playGame();
